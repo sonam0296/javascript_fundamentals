@@ -13,3 +13,5 @@ const queue = ["Ronald", "Ralph", "Scully", "Scarlet", "Jina", "Jeniffer", "Joe"
 const missingChild = findMissingChild(allStudents, queue);
 
 console.log(missingChild);
+
+// Time complexity => O(n)  ======>>> As it iterates through the allStudents array once, where n is the number of students.
