@@ -1,7 +1,8 @@
-const multiply = function(x, y){
+const multiply = function (x, y) {
     console.log(x * y)
 }
 
+// Currying is a powerful technique that can be used to simplify code, make it more reusable, and create new functions from existing ones. 
 // This is currying. 
 /** We can execute currying using 2 ways :--
  *      1. Using bind() method
@@ -18,11 +19,12 @@ multiplyBy3(5)
 
 // Using Closures
 
-const multiplyUsingClosure = function (x){
-    return function(y){
-        console.log(x*y)
+const multiplyUsingClosure = function (x) {
+    return function (y) {
+        console.log(x * y)
     }
 }
 
 const multiplyUsingClosureBy2 = multiplyUsingClosure(2)
 multiplyUsingClosureBy2(4)
+
