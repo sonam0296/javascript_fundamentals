@@ -67,6 +67,7 @@ linkedList.append(5)
 linkedList.append(4)
 linkedList.appendAtEnd(9)
 
+// Get Node 
 let nodeHead = linkedList.getNode(5)
 
 // Delete node (5) here we don't have access to head
