@@ -56,22 +56,6 @@ class LinkedList{
         return slow
     }
 
-    // findCycleStart(){
-    //     let slow = this.head
-    //     let fast = this.head
-    //     while(slow !== fast){
-    //         slow = slow.next
-    //         fast = fast.next.next
-    //     }
-    //     let current = this.head
-    //     while(current !== slow){
-    //         current = current.next
-    //         slow = slow.next
-    //     }
-    //     return current
-
-    // }
-
     print(){
         let current = this.head
         let result = []
