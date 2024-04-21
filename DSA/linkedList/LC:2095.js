@@ -43,6 +43,10 @@ class LinkedList{
 
     //  Will be using same logic as middle node deletion i.e Two pointer Approach ===>>> O(n) Time & O(1) Space
     deleteMiddleNode(){
+        // Base case
+        if(!head.next){
+            return null
+        }
         // Slow and fast ,,, slow will move by 1 & fast will move by 2
         let slow = this.head
         let fast = this.head
