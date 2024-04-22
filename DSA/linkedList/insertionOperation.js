@@ -60,6 +60,19 @@ class LinkedList {
         current.next = newNode // update the next pointer of previous node
     }
 
+    // Delete alternative node
+    deleteAlternateNodes(){
+        if(!this.head){
+            throw new Error("Linked List is empty")
+        }
+        let current = this.head
+        while(current && current.next){
+            current.next = current.next.next
+            current = current.next
+        }
+        this.print()
+    }
+
     // Print elements of list
     print() {
         let current = this.head
@@ -92,3 +105,7 @@ linkedList.insertInMiddle(40, -1)
 
 
 linkedList.print()
+
+console.log("Delete Alternate Nodes => ")
+
+linkedList.deleteAlternateNodes()
