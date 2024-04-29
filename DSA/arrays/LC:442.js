@@ -26,6 +26,10 @@ function duplicateList(arr) {
 
 // Optimized Solution ==>> O(n) Time and O(1) Space
 
+// The approach we used is called the "negation marking" or "cycle detection" technique. 
+// This approach utilizes the fact that the input array contains positive integers within a specific range (from 1 to n, where n is the length of the array). 
+// We exploit this property to mark the presence of elements by negating the value at the corresponding index in the array.
+
 /**
  * Iterate through the input array.
  *For each element arr[i], if its value is positive, it means we haven't encountered it before. So, we mark its presence by changing the value at index arr[i] - 1 to its negative counterpart.
