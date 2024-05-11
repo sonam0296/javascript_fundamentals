@@ -107,7 +107,7 @@ function pairOfFirstNLastPosition(arr, target){
         let left = 0
         let right = arr.length - 1
         // We will keep the track of mid element
-        let answer = 0
+        let answer = -1 // Because if element is not present then return -1
         while(left <=  right){
             // Find Mid ele
             let mid = Math.floor(left + ((right-left)/2))
