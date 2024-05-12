@@ -53,22 +53,22 @@ console.log(`Index of target element is: ${search(nums, target)}`)
 function searchInSortedArr(arr, target) {
     let pivot = findPivotIndex(arr)
     let n = nums.length - 1
-    if (arr[pivot] <= target && target <= arr[n - 1]) {
+    if (arr[pivot] <= target && target <= arr[n - 1]) { // Check in right side 
         return binarySearch(arr, pivot, n - 1, target)
     }
-    else {
+    else { // Check in left side 
         return binarySearch(arr, 0, pivot - 1, target)
     }
 }
 
-console.log(`Index of target element is -> ${searchInSortedArr(nums, 7)}`)
+console.log(`Index of target element is -> ${searchInSortedArr([3,4,5,6,1,2], 2)}`)
 
 function findPivotIndex(arr) {
     let left = 0
     let right = arr.length - 1
     while (left < right) {
         let mid = Math.floor(left + ((right - left) / 2))
-        if (arr[mid] >= arr[mid + 1]) {
+        if (arr[mid] >= arr[0]) {
             left = mid + 1
         }
         else {
