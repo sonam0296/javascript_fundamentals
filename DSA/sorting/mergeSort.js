@@ -50,4 +50,73 @@ function merge(arr, low, mid, high) {
 
 const nums = [2, 8, 5, 3, 9, 4, 1, 7]
 
-console.log(`Merge Sort => ${mergeSort(nums, 0, nums.length - 1)}`)
+// console.log(`Merge Sort => ${mergeSort(nums, 0, nums.length - 1)}`)
+
+
+
+// MERGE SORT 
+
+function mergeSorting(arr, start, end) {
+    // Base condition
+    if (start >= end) {
+        return
+    }
+    // Finding mid
+    let mid = Math.floor(start + ((end - start)/2))
+    console.log(mid,'::mid')
+    // Recursion 
+    mergeSort(arr, start, mid) // left part
+    mergeSort(arr, mid + 1, end) // right
+
+    // Merge the left & right 
+   return mergingBothPart(arr, start, end)
+
+}
+function mergingBothPart(arr, start, end) {
+    let mid = Math.floor(start + ((end - start)/2))
+    let leftLeng = mid - start + 1
+    let rightLeng = end - mid
+
+    let leftArr = new Array(leftLeng);
+    let rightArr = new Array(rightLeng);
+
+    // Copy left part in leftArr
+    for (let i = 0; i < leftLeng; i++) {
+        leftArr[i] = arr[start + i];
+    }
+
+    // Copy right part in rightArr
+    for (let i = 0; i < rightLeng; i++) {
+        rightArr[i] = arr[mid + 1 + i];
+    }
+
+    // Merge two sorted arrays
+    let index1 = 0, index2 = 0, mainArrIndex = start;
+    while (index1 < leftLeng && index2 < rightLeng) {
+        if (leftArr[index1] <= rightArr[index2]) {
+            arr[mainArrIndex] = leftArr[index1];
+            index1++;
+        } else {
+            arr[mainArrIndex] = rightArr[index2];
+            index2++;
+        }
+        mainArrIndex++;
+    }
+
+    // Copy any remaining elements of leftArr
+    while (index1 < leftLeng) {
+        arr[mainArrIndex] = leftArr[index1];
+        index1++;
+        mainArrIndex++;
+    }
+
+    // Copy any remaining elements of rightArr
+    while (index2 < rightLeng) {
+        arr[mainArrIndex] = rightArr[index2];
+        index2++;
+        mainArrIndex++;
+    }
+    return arr
+}
+
+console.log(`Merge Sorting -> ${mergeSorting(nums, 0, nums.length - 1)}`)
