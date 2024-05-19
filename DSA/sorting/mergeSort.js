@@ -63,7 +63,6 @@ function mergeSorting(arr, start, end) {
     }
     // Finding mid
     let mid = Math.floor(start + ((end - start)/2))
-    console.log(mid,'::mid')
     // Recursion 
     mergeSort(arr, start, mid) // left part
     mergeSort(arr, mid + 1, end) // right
@@ -116,6 +115,8 @@ function mergingBothPart(arr, start, end) {
         index2++;
         mainArrIndex++;
     }
+    delete leftArr
+    delete rightArr
     return arr
 }
 
