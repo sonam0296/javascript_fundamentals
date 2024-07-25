@@ -28,3 +28,31 @@ function maxSum(arr, k){
 }
 
 console.log(maxSum([4,2,1,7,8,1,2,8,1,0], 3))
+
+// Naive Appraoch
+
+function naiveApproach(nums, k){
+    // Base case
+    if(nums.length < k){
+        throw new Error('Array length must be greater than k')
+    }
+    let maxSum = -Infinity
+
+    // Outer loop from 0 to length - k
+    for(let i=0; i<=nums.length - k; i++){
+        let currSum = 0
+        
+        // Inner loop from 0 to k
+        for(let j=0; j<k; j++){
+            console.log(nums[i+j], i+j)
+            currSum += nums[i+j]
+        }
+        // Upadte maxSum
+        maxSum = Math.max(maxSum, currSum)
+    }
+    return maxSum
+}
+
+console.log(naiveApproach([4,2,1,7,8,1,2,8,1,0], 3))
+
+// Time - O(n2)
