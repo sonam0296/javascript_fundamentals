@@ -112,6 +112,30 @@ class LinkedList{
         }
     }
 
+    reverse() {
+        if (!this.head) {
+            throw new Error('The linked list is empty');
+        }
+
+        let current = this.head;
+        let temp = null;
+
+        while (current) {
+            // Swap the next and prev pointers
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            // Move to the next node (which is the previous node due to the swap)
+            current = current.prev;
+        }
+
+        // Adjust head pointer to the new front of the list
+        if (temp) {
+            this.head = temp.prev;
+        }
+    }
+
+
     // Traverse
     print(){
         let current = this.head;
@@ -142,5 +166,9 @@ linkedList.insertAtMiddle(8, 4)
 // linkedList.deleteAtEnd()
 linkedList.deleteAtMiddle(2)
 linkedList.deleteAtMiddle(5)
+
+linkedList.print()
+
+linkedList.reverse()
 
 linkedList.print()
