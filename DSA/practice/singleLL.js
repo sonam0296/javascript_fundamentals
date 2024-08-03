@@ -122,6 +122,27 @@ class SingleLinkedList {
         }
     }
 
+    reverseSingleLL(){
+        if (!this.head) {
+            return this.head
+        }
+        let current = this.head
+        let prev = null
+        while(current){
+            let currHead = current.next
+            current.next = prev
+            prev = current
+            current = currHead
+        }
+        let res = []
+        while(prev){
+            res.push(prev.value)
+            prev = prev.next
+        }
+        console.log(res.join('->'))
+        // return prev
+    }
+
     // Search node in LL --- O(n)
     searchInLL(value){
         if(!this.head){
@@ -213,4 +234,7 @@ singleLL.searchInLL(3)
 singleLL.print()
 
 // Reverse LL 
-singleLL.reverseLL()
+// singleLL.reverseLL()
+singleLL.reverseSingleLL()
+
+singleLL.print()
