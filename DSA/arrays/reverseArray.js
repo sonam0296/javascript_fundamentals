@@ -31,7 +31,7 @@ function inPlaceReversal(arr) {
     let right = arr.length - 1
     console.log(arr, '::::BEFORE REVERSE')
     while (left < right) {
-       [arr[left], arr[right]] = [arr[right], arr[left]]
+        [arr[left], arr[right]] = [arr[right], arr[left]]
         left++
         right--
     }
@@ -43,3 +43,52 @@ console.log(inPlaceReversal([6, 8, 1, 9, 13, 0]))
 
 // Time ==>> O(n)
 // Space ===> O(1)  // We did reversal in place
+
+function reverse(arr) {
+    let left = 0
+    let right = arr.length - 1
+    while (left < right) {
+        [arr[left], arr[right]] = [arr[right], arr[left]]
+        left++
+        right--
+    }
+    return arr
+}
+
+console.log(reverse([1, 2, 3, 4, 5]))
+
+
+// Reverse Even and odd Index
+
+function reverseEvenIndex(nums) {
+    let left = 0
+    let right = nums.length - 1
+    if (right % 2 == 0) {
+        right -= 1
+    }
+    while (left < right) {
+        [nums[left], nums[right]] = [nums[right], nums[left]]
+        left += 2
+        right -= 2
+    }
+    console.log(nums)
+}
+
+console.log(reverseEvenIndex([1, 2, 3, 4, 5, 6, 7, 8]))
+
+
+function reverseOddIndex(nums) {
+    let left = 1
+    let right = nums.length - 1
+    if (right % 2 == 0) {
+        right -= 1
+    }
+    while (left < right) {
+        [nums[left], nums[right]] = [nums[right], nums[left]]
+        left += 2
+        right -= 2
+    }
+    console.log(nums)
+}
+
+console.log(reverseOddIndex([1, 2, 3, 4, 5, 6, 7, 8]))
