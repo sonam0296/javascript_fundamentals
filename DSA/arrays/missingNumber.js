@@ -25,3 +25,15 @@ missingNumber(nums)
 
 // Time Complexity => O(n)
 // Space => O(1) // we are not using any extra space
+
+
+
+function missingNum(nums){
+    let result = nums.length
+    for(let i=0; i<nums.length; i++){
+        result += (i-nums[i])
+    }
+    return result
+}
+
+console.log(missingNum([9,6,4,2,3,5,7,0,1]))
