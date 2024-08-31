@@ -29,6 +29,21 @@ function findNthToLastNode(head, n){
     return right
 }
 
+function findNthToLastNodeUsingArr(head, n){
+    if(!head) return null
+    let res = []
+    let curr = head
+    while(curr){
+        res.push(curr.value)
+        curr = curr.next
+    }
+    console.log(res)
+
+    let index = res.length - n
+    return res[index]
+    
+}
+
 let head = new Node(1)
 head.next = new Node(2)
 head.next.next = new Node(3)
@@ -37,3 +52,5 @@ head.next.next.next.next = new Node(5)
 head.next.next.next.next.next = new Node(6)
 
 console.log(findNthToLastNode(head, 4))
+console.log('Using Array: ',findNthToLastNodeUsingArr(head, 3))
+
